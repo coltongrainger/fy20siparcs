@@ -1,0 +1,235 @@
+---
+title: Week 2
+author: Colton Grainger
+date: 2019-05-28
+revised:
+---
+
+## 2019-05-28
+
+Today I stumbled into Gil Compo's publication list at <https://www.esrl.noaa.gov/psd/people/gilbert.p.compo/publications.html>. I skimmed the following:
+
+1. Allan, Rob, Gil Compo, and Jim Carton. “Recovery of Global Surface Weather Observations for Historical Reanalyses and International Users.” Eos, Transactions American Geophysical Union 92, no. 18 (2011): 154–154. https://doi.org/10.1029/2011EO180008.
+
+    - To list large ACRE datasets (on a 150-year timescale): ISPD (surface pressure), **ICOADS**, and 20CR (this isn't really a dataset, but rather a reanalysis?).
+
+    - Our historical weather data is *only* being pushed to ICOADS.
+
+    - 2010 UNFCC SBSTA mandate: rescue data, digitize historical observations, coordinate international initiatives.
+
+    - RDA will host maritime log books (documentary climate data) with observations in two critical regions: the tropics and the arctic.
+
+        - (Brohan and Wood would like NCAR's RDA to host a redundant copies to avoid agency siloing between USFG agencies presently archiving the images.)
+
+    - Unifying goal: there needs to be a *functional*, *transparent*, and *robust* correspondence between documentary climate data and climate reanalyses.
+
+2. Compo, G. P., J. S. Whitaker, P. D. Sardeshmukh, N. Matsui, R. J. Allan, X. Yin, B. E. Gleason, et al. “The Twentieth Century Reanalysis Project.” Quarterly Journal of the Royal Meteorological Society 137, no. 654 (2011): 1–28. https://doi.org/10.1002/qj.776.
+
+3. Stickler, Alexander, Samuel Storz, Richard Wartenburger, Hans Hersbach, Gilbert P. Compo, Paul Poli, Dick Dee, and Stefan Brönnimann. “Upper-Air Observations from the German Atlantic Expedition (1925–27) and Comparison with the Twentieth Century and ERA-20C Reanalyses.” Meteorologische Zeitschrift, August 31, 2015, 525–44. https://doi.org/10.1127/metz/2015/0683.
+
+    - IGRA2 data formats from c. 1957 radiosonde networks.
+
+    - In passing, Steve Worley mentioned that the name of a dataset, the date range, the genre (format) of the data, and the parameters (e.g., meteorological observation types) would serve as a minimal metadata schema.
+
+    - Asked Tom about accessing NCAR's historical upper-air database, perhaps as a template for our meta-data schema. Tom mentioned this dataset is exceptional, a point also made by Stickler et al.: marine upper-air observations are rare, and the *Meteor*'s voyage 1925-'27 is *not* of the same class as the observations we should expect from the Wood/Brohan's historical ship logs.
+
+    - Near surface marine observations are (?) made in a range of [-10m, 10m] from sea level.
+
+        - But this range varies with the vessel type, e.g., ships, bouys, ports, miscellaneous vessels, sail drones
+
+    - However, Tom and I were led to distinguish three user groups for rda image archive: 
+        
+        - Citizen scientists responsible for digitizing/reducing meterological data from .tiff files.
+        - ICOADS developers, among other scientists "operating" on datasets prior to the dataset's use as observational data to diff against model outputs for climate reanalyses.
+        - Scientists searching for climate trends, who, upon encountering *extreme*, *exceptional*, or *misleading* data, need to cross-reference the .tiff files for "ground truth validation".
+
+    - Some
+
+4. Washington, Department of Atmospheric Science/University of, Met Office/Ministry of Defence/United Kingdom, Research Data Archive/Computational and Information Systems Laboratory/National Center for Atmospheric Research/University Corporation for Atmospheric Research, Cooperative Institute for Research in Environmental Sciences/University of Colorado, Deutscher Wetterdienst (German Meteorological Service)/Germany, National Oceanography Centre/University of Southampton, Center for Ocean-Atmospheric Prediction Studies/Florida State University, Physical Sciences Division/Earth System Research Laboratory/OAR/NOAA/U S. Department of Commerce, and National Centers for Environmental Information/NESDIS/NOAA/U S. Department of Commerce. “International Comprehensive Ocean-Atmosphere Data Set (ICOADS) Release 3, Individual Observations,” May 9, 2016. https://doi.org/10.5065/D6ZS2TR3.
+
+    - ICOADS provides "periodic constraints" for climate models.
+
+    - (Tom summarized that sea ice and sea temp boundary conditions are set by other models, our contribution will be to provide *observations* for interpolation, rather than *boundary conditions.* I'm confused about the difference, but it's immaterial to my project for the next 10 weeks.)
+
+5. Polavarapu, Saroja. “PHY 2509: Atmospheric Data Assimilation,” 2004. http://www.atmosp.physics.utoronto.ca/PHY2509/.
+
+    - Conversely, as a use case for the *reduced* historical weather data (*not* the images) Tom mentioned Dave Berry (?), Elizabeth Kent (?) searching for biases by diffing observational datasets against model outputs. Polavarapu describes *data assimilation* just as so: weighing model outputs again observation data. 
+
+        - Data assimilation is at the intersection of stochastic processes, signal processing, and time series analyses. 
+
+        - Data assimilation requires, broadly, *filtering and interpolation*. Modern reanalysis systems are *variational*, including `3DVAR`, `4DVAR`, and `EnKF`. 
+
+        - One handles underdeterminacy (on a relative scale of ~75 unknown states for each observation) by *sampling prior data*.
+
+6. <https://reanalyses.org/ocean/overview-current-reanalyses>
+
+7. <https://www1.ncdc.noaa.gov/pub/data/igra/data/igra2-data-format.txt>
+
+    - Potentially a metadata framework.
+
+8. NCAR's historical upper-air dataset `glade/collections/rda/data/ds370.11`.
+
+    - ASCII files in GLADE.
+    - Primary copy in HPSS.
+
+
+9. I read a bit about SPARC, but it was over my head. Instead, I took this index of abbreviations from *Introduction to the S-RIP and overview of the reanalysis systems.* Atmos. Chem. Phys., 17, 1417–1452, 2017. <doi:10.5194/acp-17-1417-2017>."
+
+    - 20CR, *20th Century Reanalysis of NOAA and CIRES*
+    - 3D-FGAT, *3-dimensional variational assimilation scheme with first guess at the appropriate time*
+    - 3D-Var, *3-dimensional variational assimilation scheme*
+    - 4D-Var, *4-dimensional variational assimilation scheme*
+    - ACRE, *Atmospheric Circulation Reconstructions over the Earth*
+    - AERONET, *Aerosol Robotic Network*
+    - AIRS, *Atmospheric Infrared Sounder*
+    - AMDAR, *Aircraft Meteorological Data Relay*
+    - AMIP, *Atmospheric Model Intercomparison Project*
+    - AMSR, *Advanced Microwave Scanning Radiometer*
+    - AMSR-E, *Advanced Microwave Scanning Radiometer for EOS*
+    - AMSU, *Advanced Microwave Sounding Unit*
+    - AMV, *atmospheric motion vector*
+    - ANA, *analysis state (for MERRA and MERRA-2; see Sect. 4)*
+    - AOD, *aerosol optical depth*
+    - Aqua, *a satellite in the EOS A-Train satellite constellation*
+    - ASM, *assimilated state (for MERRA and MERRA-2; see Sect. 4)*
+    - ATMS, *Advanced Technology Microwave Sounder*
+    - ATOVS, *Advanced TIROS Operational Vertical Sounder*
+    - Aura, *a satellite in the EOS A-Train satellite constellation*
+    - AVHRR, *Advanced Very High Resolution Radiometer*
+    - BUOY, *surface meteorological observation report from buoys*
+    - CDAS, *Climate Data Assimilation System*
+    - CFC, *chlorofluorocarbon*
+    - CFS, *Climate Forecast System*
+    - CFSR, *Climate Forecast System Reanalysis of NCEP*
+    - CFSv2, *Climate Forecast System, version 2*
+    - CIRES, *Cooperative Institute for Research in Environmental Sciences (NOAA and University of Colorado Boulder)*
+    - CLIRAD, *Climate and Radiation Branch, NASA Goddard Space Flight Center*
+    - CMIP5, *Coupled Model Intercomparison Project Phase 5*
+    - COBE, *Daily Sea Surface Temperature Analysis for Climate Monitoring (JMA)*
+    - CRIEPI, *Central Research Institute of Electric Power Industry*
+    - CrIS, *Cross-track Infrared Sounder*
+    - CRTM, *Community Radiative Transfer Model*
+    - CTM, *chemical transport model*
+    - CU, *convective (cumulus) cloud parametrization*
+    - DAO, *Data Assimilation Office (now GMAO)*
+    - DOE, *Department of Energy*
+    - ECMWF, *European Centre for Medium-Range Weather Forecasts*
+    - EMC, *Environmental Modeling Center*
+    - EnKF, *ensemble Kalman filter (a data assimilation scheme)*
+    - EOS, *NASA’s Earth Observing System*
+    - ERA-15, *ECMWF 15-year reanalysis*
+    - ERA-20C, *ECMWF 20th century reanalysis*
+    - ERA-20CM, *10-member AMIP ensemble, companion to ERA-20C*
+    - ERA-40, *ECMWF 40-year reanalysis*
+    - ERA5, *a forthcoming reanalysis developed by ECMWF*
+    - ERA-Interim, *ECMWF interim reanalysis*
+    - EUMETSAT, *European Organisation for the Exploitation of Meteorological Satellites*
+    - ExUTLS, *extra-tropical upper troposphere and lower stratosphere*
+    - FGGE, *First GARP Global Experiment*
+    - GARP, *Global Atmospheric Research Programme*
+    - GCOS, *Global Climate Observing System*
+    - GEOS, *Goddard Earth Observing System Model of the NASA*
+    - GFS, *Global Forecast System of the NCEP*
+    - GISST, *Global sea Ice and Sea Surface Temperature (UK Met Office)*
+    - GLATOVS, *Goddard Laboratory for Atmospheres TOVS (radiative transfer model)*
+    - GMAO, *Global Modeling and Assimilation Office of NASA*
+    - GMS, *Geostationary meteorological satellite*
+    - GNSS-RO, *Global Navigation Satellite System Radio Occultation (see also GPS-RO)*
+    - GOCART, *Goddard Chemistry Aerosol Radiation and Transport*
+    - GOES, *Geostationary Operational Environmental Satellite*
+    - GOME, *Global Ozone Monitoring Experiment*
+    - GPS-RO, *Global Positioning System Radio Occultation (see also GNSS-RO)*
+    - GRUAN, *GCOS Reference Upper Air Network*
+    - GSICS, *Global Space-based Inter-Calibration System*
+    - GSM, *Global Spectral Model of the JMA*
+    - GTS, *Global Telecommunication System*
+    - HadISST, *Hadley Centre Sea Ice and Sea Surface Temperature data set*
+    - HALOE, *Halogen Occultation Experiment*
+    - HCFC, *hydrochlorofluorocarbon*
+    - HIRS, *High-resolution Infrared Radiation Sounder*
+    - IASI, *Infrared Atmospheric Sounding Interferometer*
+    - IAU, *incremental analysis update*
+    - ICSU, *International Council for Science*
+    - IFS, *Integrated Forecast System of the ECMWF*
+    - IGY, *International Geophysical Year*
+    - IOC, *Intergovernmental Oceanographic Commission of UNESCO*
+    - JCDAS, *JMA Climate Data Assimilation System*
+    - JIC, *Joint Ice Center (now Naval Ice Center)*
+    - JMA, *Japan Meteorological Agency*
+    - JRA-25, *Japanese 25-year Reanalysis*
+    - JRA-55, *Japanese 55-year Reanalysis*
+    - JRA-55AMIP, *Japanese 55-year Reanalysis based on AMIP-type simulations*
+    - JRA-55C, *Japanese 55-year Reanalysis assimilating Conventional observations only*
+    - LEO/GEO, *low earth orbit/geostationary*
+    - LS, *non-convective (large scale) cloud parametrization*
+    - LW, *longwave radiation parametrization*
+    - McICA, *Monte Carlo independent column approximation*
+    - MERRA, *Modern Era Retrospective-Analysis for Research*
+    - Meteosat, *series of geostationary meteorological satellites operated by EUMETSAT*
+    - MIPAS, *Michelson Interferometer for Passive Atmospheric Sounding*
+    - MISR, *Multi-angle Imaging SpectroRadiometer*
+    - MLS, *Microwave Limb Sounder*
+    - MODIS, *Moderate resolution Imaging Spectroradiometer*
+    - MRF, *Medium Range Forecast Version of the NCEP GFS*
+    - MRI-CCM1, *Meteorological Research Institute (JMA) Chemistry Climate Model, version 1*
+    - MSU, *Microwave Sounding Unit*
+    - MTSAT, *Multi-functional transport satellite*
+    - NASA, *National Aeronautics and Space Administration*
+    - NCAR, *National Center for Atmospheric Research*
+    - NCEP, *National Centers for Environmental Prediction of the NOAA*
+    - NH, *Northern Hemisphere*
+    - NMC, *National Meteorological Center (now NCEP)*
+    - NOAA, *National Oceanic and Atmospheric Administration*
+    - NON, *non-orographic gravity wave drag parametrization*
+    - OISST, *Optimum Interpolation Sea Surface Temperature*
+    - OMI, *Ozone Monitoring Instrument*
+    - ORO, *orographic gravity wave drag parametrization*
+    - OSTIA, *Operational Sea Surface Temperature and Sea Ice Analysis*
+    - PAOBS, *synthetic surface pressure data produced for the SH by the Australian Bureau of Meteorology*
+    - PIBAL, *pilot balloon*
+    - QBO, *quasi-biennial oscillation*
+    - R1, *NCEP-NCAR Reanalysis 1*
+    - R2, *NCEP-DOE Reanalysis 2*
+    - RAOBCORE, *Radiosonde Observation Correction using Reanalyses*
+    - RH, *relative humidity*
+    - RRTM, *Rapid Radiative Transfer Model developed by Atmospheric and Environmental Research*
+    - RRTMG, *RRTM for application to general circulation models*
+    - RTG, *Real-Time, Global sea surface temperature analysis*
+    - RTTOV, *Radiative Transfer for TOVS*
+    - SAO, *semi-annual oscillation*
+    - SBUV, *Solar Backscatter Ultraviolet Radiometer*
+    - SCIAMACHY, *Scanning Imaging Absorption Spectrometer for Atmospheric Chartography*
+    - SH, *Southern Hemisphere*
+    - SHIP, *surface meteorological observation report from ships*
+    - SMMR, *Scanning Multi-channel Microwave Radiometer*
+    - SOLARIS, *Solar Influences for SPARC*
+    - SPARC, *Stratosphere–troposphere Processes And their Role in Climate*
+    - S-RIP, *SPARC Reanalysis Intercomparison Project*
+    - SSM/I or SSMI, *Special Sensor Microwave Imager*
+    - SSMIS, *Special Sensor Microwave Imager Sounder*
+    - SST, *sea surface temperature*
+    - SSU, *Stratospheric Sounding Unit*
+    - SW, *shortwave radiation parametrization*
+    - SYNOP, *surface meteorological observation report from manned and automated weather stations*
+    - TCO, *total column ozone*
+    - Terra, *an EOS satellite*
+    - TIM, *Total Irradiance Monitor*
+    - TIROS, *Television Infrared Observation Satellite*
+    - TMI, *Tropical Rainfall Measuring Mission (TRMM) Microwave Imager*
+    - TOA, *top of the atmosphere*
+    - TOMS, *Total Ozone Mapping Spectrometer*
+    - TOVS, *TIROS Operational Vertical Sounder*
+    - TSI, *total solar irradiance*
+    - TTL, *tropical tropopause layer*
+    - UARS, *Upper Atmosphere Research Satellite*
+    - UNESCO, *United Nations Educational, Scientific and Cultural Organization*
+    - USLM, *upper stratosphere and lower mesosphere*
+    - UTLS, *upper troposphere and lower stratosphere*
+    - VTPR, *Vertical Temperature Profile Radiometer*
+    - WCRP, *World Climate Research Programme*
+    - WMO, *World Meteorological Organization*
+
+10. Here's a random question, which I overhead in the library while Natasha Flyer <https://staff.ucar.edu/users/flyer> was lecturing her postdoc: what order of (differentiable) approximation can one obtain from a nearest neighbour stiple with 31 points? (Did I hear incorrectly?)
+
+### 2019-05-29
+

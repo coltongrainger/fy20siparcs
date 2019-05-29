@@ -1,0 +1,35 @@
+The tidyverse is a functional programming paradigm for R. 
+
+## Hady Wickham's tidyverse
+
+Among others, Roger Peng. Tidy API principles include
+
+- reusing existing data structures
+- composing single functions with the pipe
+- should be human readable
+ 
+### packages
+
+import               | tidy  | transform | visualize | model | communicate
+---                  | ---   | ---       | ---       | ---   | ---
+readr, haven, readxl | tidyr | dplyr     |` `           |       |             
+
+### demo
+
+	aqt %>% pull(Ozone) %>% summary()
+
+### TODO
+
+- learn `ggplot2`
+- learn `dplyr` standard commands
+- `purrr` promotes functional programming
+  - a good tutorial might take *4 hours*
+
+- `pluck`
+- `broom` (see `augment()`)
+
+### other resources
+
+- Hadley Wickam's <https://r4ds.had.co.nz/>
+- Jenny Bryan's <https://jennybc.github.io/purrr-tutorial/>
+- Gargi Data's <https://gargidata.com>
