@@ -81,3 +81,20 @@ Today I stumbled into Gil Compo's publication list at <https://www.esrl.noaa.gov
 
 ### 2019-05-29
 
+Today I intended to complete the following tasks.
+
+1. Determine what Wood and Brohan want from metadata.
+    - Focus on issues with SQuo storage of images in National Archives.
+    - Unpack NARA_Master_Manifest.
+
+2. Bulk download image samples to `/glade/collections/rda/work/image_archive`.
+
+3. Initialize mySQL test database; establish UIDs for images.
+
+For 1--2, I loaded the NARA_Master_Manifest as `csv` files and went through Jake VanderPlas's tutorial for munging data with the python package `pandas` (similar to `numpy`). I anticipate scripting my bulk downloads in pandas/numpy, then injecting the "clean" metadata DataFrames into mySQL, one table for each point of metadata. This tutorial is presently hosted at <https://github.com/coltongrainger/fy20pandas>, forked from [Monte Lunacek](https://github.com/mlunacek) at NREL. (He presented at RMACC 2019.)
+
+I made no progress on 3, though I am working in pandas under the assumption that stable URLs will *initially* be a nightmare to coordinate.
+
+I also consolidated my *all* my notes from SIParCS under the repo <https://github.com/coltongrainger/fy20siparcs>.
+
+
