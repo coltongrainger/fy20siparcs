@@ -1,0 +1,91 @@
+\documentclass[a0paper]{betterposter}
+\usepackage{lipsum}
+
+% Better Poster latex template example v1.0 (2019/04/04)
+% GNU General Public License v3.0
+% Rafael Bailo
+% https://github.com/rafaelbailo/betterposter-latex-template
+% Original design from Mike Morrison
+% https://twitter.com/mikemorrison
+
+%% Setting the width of columns
+% Left column
+\setlength{\leftbarwidth}{0.191\paperwidth}
+% Right column
+\setlength{\rightbarwidth}{0.191\paperwidth}
+
+%% Setting the column margins
+% Horizontal margin
+%\setlength{\columnmarginvertical}{0.05\paperheight}
+% Vertical margin
+%\setlength{\columnmarginhorizontal}{0.05\paperheight}
+% Horizontal margin for the main column
+%\setlength{\maincolumnmarginvertical}{0.15\paperheight}
+% Vertical margin for the main column
+%\setlength{\maincolumnmarginhorizontal}{0.15\paperheight}
+
+%% Changing font sizes
+% Text font
+%\renewcommand{\fontsizestandard}{\fontsize{28}{35} \selectfont}
+% Main column font
+%\renewcommand{\fontsizemain}{\fontsize{28}{35} \selectfont}
+% Title font
+%\renewcommand{\fontsizetitle}{\fontsize{28}{35} \selectfont}
+% Author font
+%\renewcommand{\fontsizeauthor}{\fontsize{28}{35} \selectfont}
+% Section font
+%\renewcommand{\fontsizesection}{\fontsize{28}{35} \selectfont}
+
+%% Changing colours
+% Background of side columns
+%\renewcommand{\columnbackgroundcolor}{black}
+% Font of side columns
+%\renewcommand{\columnfontcolor}{gray}
+% Background of main column
+%\renewcommand{\maincolumnbackgroundcolor}{empirical}
+\renewcommand{\maincolumnbackgroundcolor}{theory}
+%\renewcommand{\maincolumnbackgroundcolor}{methods}
+%\renewcommand{\maincolumnbackgroundcolor}{intervention}
+% Font of main column
+%\renewcommand{\maincolumnfontcolor}{gray}
+
+\begin{document}	
+
+\betterposter{ 
+%main
+
+\maincolumn{
+    \textbf{Main finding} goes here,\\
+    translated into \textbf{plain English}.\\
+    \textbf{Emphasize} the important words.
+    }{
+    \compactqrcode{img/git-logo_qrcode}{\texttt{github.com/ncar/rda-image-archive}}
+    }
+
+}{ 
+%left
+
+%header
+\title{Categorical Metadata for Unreduced Climate Observations}
+\author{Colton Grainger}
+\institution{University of Colorado}
+
+%content
+
+%logos
+\vfill
+\begin{center}
+    \includegraphics[height=4.5em]{img/CISL-contemp-logo-blue-square}\hspace{0.5em}
+    \includegraphics[height=5em]{img/cu-logo}\hspace{0.5em}
+    \includegraphics[height=5em]{img/nsf-logo}
+\end{center}
+
+}{ 
+%right
+
+\section{TODO}
+\lipsum[3]
+
+} 
+
+\end{document}
