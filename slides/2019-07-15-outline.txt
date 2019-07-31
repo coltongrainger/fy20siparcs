@@ -1,0 +1,34 @@
+- introduction 
+    - to contextualize the project with reference to Kevin and Philip's work
+
+- statement of problem and proposed solution
+
+- literature review
+    - to distinguish the proposed solution from existing methods
+    - e.g., a survey of existing image repositories and archives
+
+- summary of input from stakeholders
+    - to list requirements, expected use cases, and design criteria
+    - to share comments from Philip, Kevin, and NCAR scientists
+
+- case-study: implementing the proposed solution
+    - subsections TBD
+    - likely to be divided chronologically, 
+        - e.g., metadata processing, 
+        - data retrieval, ...
+
+- discussion
+    - to abstract generalizable knowledge from the case-study
+
+- future work
+
+- conclusion 
+    - with reference back to Kevin and Philip's work
+
+- acknowledgements 
+    - mentors at NCAR
+    - visits from Philip and Kevin
+
+- references
+    - literature
+    - software

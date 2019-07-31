@@ -26,7 +26,7 @@
 
 %% Changing font sizes
 % Text font
-%\renewcommand{\fontsizestandard}{\fontsize{28}{35} \selectfont}
+% \renewcommand{\fontsizestandard}{\fontsize{68}{72} \selectfont} %TODO
 % Main column font
 %\renewcommand{\fontsizemain}{\fontsize{28}{35} \selectfont}
 % Title font
@@ -55,9 +55,11 @@
 %main
 
 \maincolumn{
-    \textbf{Main finding} goes here,\\
-    translated into \textbf{plain English}.\\
-    \textbf{Emphasize} the important words.
+    \begin{itemize}
+        \item Gather images at a \textbf{single resource}.
+        \item Establish a \textbf{common description framework} for image metadata.
+        \item Provide \textbf{bulk, programmatic access} to image subsets.
+    \end{itemize}
     }{
     \compactqrcode{img/git-logo_qrcode}{\texttt{github.com/ncar/rda-image-archive}}
     }
@@ -66,7 +68,7 @@
 %left
 
 %header
-\title{Categorical Metadata for Unreduced Climate Observations}
+\title{Towards\\ Categorical\\ Metadata\\ for Unreduced\\ Climate\\ Observations}
 \author{Colton Grainger}
 \institution{University of Colorado}
 
@@ -74,6 +76,7 @@
 
 %logos
 \vfill
+I am grateful for support from \textbf{SIParCS}, and for mentorship from \textbf{Thomas Cram}, \textbf{Matt~Mayernick}, and \textbf{Steve Worley}.\vspace{1em}
 \begin{center}
     \includegraphics[height=4.5em]{img/CISL-contemp-logo-blue-square}\hspace{0.5em}
     \includegraphics[height=5em]{img/cu-logo}\hspace{0.5em}
@@ -83,8 +86,96 @@
 }{ 
 %right
 
-\section{TODO}
-\lipsum[3]
+\section{informal outline}
+\begin{itemize}
+\item
+  introduction
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to contextualize the project with reference to Kevin and Philip's
+    work
+  \end{itemize}
+\item
+  statement of problem and proposed solution
+\item
+  literature review
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to distinguish the proposed solution from existing methods
+  \item
+    e.g., a survey of existing image repositories and archives
+  \end{itemize}
+\item
+  summary of input from stakeholders
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to list requirements, expected use cases, and design criteria
+  \item
+    to share comments from Philip, Kevin, and NCAR scientists
+  \end{itemize}
+\item
+  case-study: implementing the proposed solution
+
+  \begin{itemize}
+  \tightlist
+  \item
+    subsections TBD
+  \item
+    likely to be divided chronologically,
+
+    \begin{itemize}
+    \tightlist
+    \item
+      e.g., metadata processing,
+    \item
+      data retrieval, \ldots{}
+    \end{itemize}
+  \end{itemize}
+\item
+  discussion
+
+  \begin{itemize}
+  \tightlist
+  \item
+    to abstract generalizable knowledge from the case-study
+  \end{itemize}
+\item
+  future work
+\item
+  conclusion
+
+  \begin{itemize}
+  \tightlist
+  \item
+    with reference back to Kevin and Philip's work
+  \end{itemize}
+\item
+  acknowledgements
+
+  \begin{itemize}
+  \tightlist
+  \item
+    mentors at NCAR
+  \item
+    visits from Philip and Kevin
+  \end{itemize}
+\item
+  references
+
+  \begin{itemize}
+  \tightlist
+  \item
+    literature
+  \item
+    software
+  \end{itemize}
+\end{itemize}
 
 } 
 
