@@ -36,9 +36,9 @@
 
 \begin{document}
 
-% front
+% opening
 \begin{frame}
-    \hspace{-5.65em}\includegraphics[width=4.28em]{img/slides_qrcode.png}$\xymatrix{& \mathsf{slides} \ar[l]}$
+    \hspace{-5.65em}\includegraphics[width=4.28em]{img/git_qrcode.png}$\xymatrix{& \mathsf{slides} \ar[l]}$
 \titlepage
 \begin{figure}
     \includegraphics[height=4.5em]{img/CISL-contemp-logo-blue-square}\hspace{0.5em}
@@ -47,7 +47,7 @@
 \end{figure}
 \end{frame}
 
-% "tasks"
+% tasks
 \section{Status Quo}
 
 \begin{frame}
@@ -91,7 +91,7 @@
       \textit{qrcode}
           \includegraphics[width=\textwidth]{img/brohan_qrcode}
           \caption{
-            \emph{CISL Seminar}, P. Brohan (2019)
+            \emph{CISL Seminar}, P.~Brohan (2019)
           }
       \end{figure}
   \end{minipage}
@@ -108,17 +108,19 @@
 $ exiftool brohan_qrcode.png
 File Size : 2.7 kB
 Image Size : 441x441
+MIME Type : image/png
 \end{verbatim}
 \end{minipage}
 \end{frame}
+
+\section{Alternative}
 
 \begin{frame}[fragile]
   \begin{center}
     \textit{metadata}\\
     \texttt{\{'key:value' for key in <schema>\}}
   \end{center}
-
-    \textit{what metadata is signal? or only noise?}
+    \textit{what available metadata has low noise-to-signal ratio?}
 
 \begin{minipage}[t]{0.5\linewidth}
     \begin{figure}
@@ -130,53 +132,84 @@ Image Size : 441x441
 \end{minipage}
 %either math model or schema here TODO
 \begin{minipage}[t]{0.45\linewidth}
-    \begin{figure}
-        \begin{itemize}
-            \item archive
-            \item document
-            \item image
-            \item observation
-            \item platform
-        \end{itemize}
-        \caption{metadata classes}
-    \end{figure}
+\hspace{2em}
+\begin{verbatim}
+$ exiftool Idaho-BB-0034.JPG 
+File Size : 4.6 MB
+Image Size : 3744x5616
+MIME Type : image/jpeg
+\end{verbatim}
+        \begin{description}
+            \item[arc] archive
+            \item[doc] document
+            \item[img] image
+            \item[obs] observation
+            \item[plt] platform
+        \end{description}
 \end{minipage}
 \end{frame}
 
-\section{Proposal}
+\begin{frame}
+    \begin{itemize}
+    \item Roughly, an image in the category $\text{img}$ approximates a time-series $\sigma \colon [t_0, t_1] \to \mathscr{S}$, where $\mathscr{S}$ is the state space of meteorological variables. 
+
+    \item An observation is $\rho(t)$ evaluated at a time $t$.
+
+    \item A platform in the category $\text{plt}$ approximates a time-series $\lambda \colon [t_0, t_1] \to M$, where $M$ is a differentiable manifold.
+    \end{itemize}
+
+    \begin{minipage}[t]{0.45\linewidth}
+        \begin{description}
+            \item[arc] archive
+            \item[doc] document
+            \item[img] image
+            \item[obs] observation
+            \item[plt] platform
+        \end{description}
+    \end{minipage}
+    \begin{minipage}[t]{0.40\linewidth}
+        \begin{block}{dependencies}
+            $\xymatrix{
+                \text{arc} \ar@{->>}[dr] &  & \ar@{->>}@/^5px/[dl] \text{plt} \\
+                & \text{doc} \ar@{.>}@/^5px/[ur]^{\exists!} \ar@{->>}[dl] & \\
+                \text{img} \ar@{->>}[rr] & & \text{obs} \ar@{_{(}->}[uu]_{\text{update}}}$
+        \end{block}
+    \end{minipage}
+\end{frame}
+
+\subsection{3 Tasks}
+
 \begin{frame}
     \begin{enumerate}
-        \item Gather images at a \textbf{single resource}.
+        \item Gather images into (at least) \textbf{one repository}. 
         \item Establish a \textbf{common description framework} for image metadata.
         \item Provide \textbf{bulk, programmatic access} to image subsets.
     \end{enumerate}
 \end{frame}
 
-\section{Functions}
+\subsection{Functions}
 
 \begin{frame}
-    \begin{enumerate}
-        \item MySQL schema with Makefile.
-        \item Agnostic ingest scripts. \texttt{assign\_uuid()}. Bundle metadata.
-        \item \texttt{rda.ucar.edu/i/<uuid>}
-    \end{enumerate}
+    \begin{description}
+        \item[repo] MySQL schema with Makefile. \texttt{assign\_uuid()}.
+        \item[framework] Agnostic ingest scripts.  Bundle metadata.
+        \item[access] \texttt{rda.ucar.edu/i/<uuid>}
+    \end{description}
 \end{frame}
 
-\section{Interfaces}
+\subsection{Interfaces}
 \begin{frame}
-	\begin{enumerate}
-        \item RELAX NG validator.
-
-        \item Python pandas interface. Query methods.
-
-        \item \texttt{rda.ucar.edu/i/<query>}
-	\end{enumerate}
+    \begin{description}
+        \item[repo] Conflict resolution for \texttt{assign-uuid()}.
+        \item[framework] RELAX NG validator.
+        \item[access] \texttt{rda.ucar.edu/i/<query>}
+    \end{description}
 \end{frame}
 
 \section{References}
 \begin{frame}
     \begin{figure}
-        \includegraphics[width=\0.9\textwidth]{img/git_qr.png}
+        \includegraphics[width=0.5\textwidth]{img/git_qr.png}
         \caption{git repo}
     \end{figure}
 \end{frame}

@@ -1,9 +1,11 @@
 ---
-title: RDA Images Update
+title: Progress reporting
 author: Colton Grainger
 date: 2019-07-17
 revised:
 ---
+
+(Meeting with Matt.)
 
 ## Done
 
